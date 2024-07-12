@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mercado libre API</title>
+
+    <link rel="stylesheet" href="style.css" />
     <script
       type="module"
       src="https://cdn.jsdelivr.net/npm/@ionic/core@8.1.0/dist/ionic/ionic.esm.js"
@@ -20,22 +22,37 @@
   </head>
   <body>
     <ion-app>
-        <ion-nav root="page-list-items"></ion-nav>
+      <ion-nav root="page-list-items"></ion-nav>
     </ion-app>
 
     <template id="page-list-items.html">
-        <ion-header>
-            <ion-toolbar>
-                <ion-title>List Items</ion-title>
-            </ion-toolbar>
-        </ion-header>
-        <ion-content>
-            <ion-list id="list-items"></ion-list>
-        </ion-content>
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>List Items</ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content>
+        <ion-list id="list-items"></ion-list>
+      </ion-content>
     </template>
-    <script src="js/main.js"></script>
+
+
+    <template id="page-item-detail.html">
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>Item Detail</ion-title>
+        </ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-back-button></ion-back-button>
+        </ion-buttons>
+      </ion-header>
+      <ion-content>
+        <div id="item-detail"></div>
+      </ion-content>
+    </template>
     <script src="js/pages.js"></script>
     <script src="js/components.js"></script>
     <script src="js/constants.js"></script>
+    <script src="js/main.js"></script>
   </body>
 </html>

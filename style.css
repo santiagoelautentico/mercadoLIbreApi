@@ -1,0 +1,10 @@
+#list-items{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.ion-inherit-color{
+    font-size: 16px;
+}
+img{
+    width: 100%;
+}
