@@ -1,10 +1,64 @@
-#list-items{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+:host {
+  box-shadow: none;
 }
-.ion-inherit-color{
-    font-size: 16px;
+
+@font-face {
+    font-family: 'Gizmo-Regular';
+    src: url(./fonts/Geist-Regular.otf) format('opentype');
+    font-weight: normal;
 }
-img{
-    width: 100%;
+@font-face {
+    font-family: 'Panchang-bold';
+    src: url(./fonts/Panchang-Bold.otf) format('opentype');
+    font-weight: bold;
+}
+*{
+    font-family: 'Gizmo-Regular';
+}
+#list-items {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.md header-md header-collapse-none hydrated {
+  box-shadow: none;
+}
+.ion-inherit-color {
+  font-size: 16px;
+}
+img {
+  width: 100%;
+}
+item-card {
+  width: 85%;
+  margin: 0 auto;
+}
+.logo-nav {
+  padding: 0 5rem;
+}
+.toolbar-container {
+  padding: 0 2rem;
+}
+ion-icon {
+  font-size: 24px;
+}
+ion-searchbar {
+  padding: 2rem 0;
+}
+.promotion-container {
+  height: 10rem;
+  display: flex;
+  background-color: #04a339;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  margin: 2rem 1rem;
+  border-radius: 15px;
+}
+.searchbar-input.sc-ion-searchbar-md {
+  box-shadow: none;
+}
+.discount-number{
+    font-size: 6rem;
+    font-family: 'Panchang-bold';
+    text-align: center;
 }
