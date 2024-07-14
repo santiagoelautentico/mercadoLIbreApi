@@ -1,10 +1,20 @@
 :host {
   box-shadow: none;
 }
-
+:root{
+  --black: #222034;
+}
+* {
+  list-style: none;
+}
 @font-face {
     font-family: 'Gizmo-Regular';
     src: url(./fonts/Geist-Regular.otf) format('opentype');
+    font-weight: normal;
+}
+@font-face {
+    font-family: 'Gizmo-Bold';
+    src: url(./fonts/Geist-Bold.otf) format('opentype');
     font-weight: normal;
 }
 @font-face {
@@ -22,15 +32,16 @@
 .md header-md header-collapse-none hydrated {
   box-shadow: none;
 }
-.ion-inherit-color {
+/* .ion-inherit-color {
   font-size: 16px;
-}
+} */
 img {
   width: 100%;
 }
 item-card {
   width: 85%;
   margin: 0 auto;
+  color: var(--black);
 }
 .logo-nav {
   padding: 0 5rem;
@@ -61,4 +72,48 @@ ion-searchbar {
     font-size: 6rem;
     font-family: 'Panchang-bold';
     text-align: center;
+}
+ion-card{
+  box-shadow: none;
+}
+ion-card-subtitle{
+  font-family: 'gizmo-bold';
+  color: var(--black);
+  font-size: 200px;
+}
+.ion-text-title{
+  font-size: 16px;
+}
+.ion-text-subtitle{
+  font-family: 'gizmo-bold';
+  color: var(--black);
+  font-size: 20px;
+}
+.categories-container{
+  display: flex;
+  overflow: auto;
+  gap: 1rem;
+  align-items: center;
+  padding: 0 1rem;
+}
+.categories-container li{
+  font-size: 16px;
+  color: var(--black);
+  cursor: pointer;
+}
+.categories-container .active{
+  color: #122593;
+  font-family: 'gizmo-bold';
+  font-size: 18px;
+}
+.title-categories{
+  font-family: 'gizmo-bold';
+  font-size: 21px;
+  margin-left: 1rem;
+}
+.icon-nav{
+  padding: 0 0.5rem;
+}
+ion-card-subtitle{
+  font-size: 16px
 }

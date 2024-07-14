@@ -15,11 +15,11 @@ customElements.define(
       this.innerHTML =
         /*html*/
         `
-            <ion-card id="${this.dataItem.$id}">
+            <ion-card id="${this.dataItem.$id}" button>
                 <img alt="" src="${this.dataItem.thumbnail}" />
                 <ion-card-header>
-                    <ion-card-title>${this.dataItem.title}</ion-card-title>
-                    <ion-card-subtitle>${this.dataItem.currency_id} ${this.dataItem.price}</ion-card-subtitle>
+                    <ion-card-title class="ion-text-title">${this.dataItem.title}</ion-card-title>
+                    <ion-card-subtitle class="ion-text-subtitle">${this.dataItem.currency_id} ${this.dataItem.price}</ion-card-subtitle>
                 </ion-card-header>
             </ion-card>
          `;

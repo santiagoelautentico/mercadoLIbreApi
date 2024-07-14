@@ -34,22 +34,47 @@
         </ion-toolbar>
       </ion-header>
       <ion-content>
-        <ion-searchbar placeholder="Search" style="padding: 0 1rem; margin-top: 1rem;" id="search"></ion-searchbar>
+        <ion-searchbar
+          placeholder="Search"
+          style="padding: 0 1rem; margin-top: 1rem"
+          id="search"
+        ></ion-searchbar>
         <ion-card class="promotion-container" button>
           <h2 class="discount-number">%15</h2>
         </ion-card>
+        <h2 class="title-categories">Categories</h2>
+        <ul class="categories-container">
+          <li class="categorie active" data-id="">Featured</li>
+          <li class="categorie" data-id="consolas">Consoles</li>
+          <li class="categorie" data-id="celulares">Phones</li>
+          <li class="categorie" data-id="laptops">Laptops</li>
+          <li class="categorie" data-id="impresoras">Printers</li>
+          <li class="categorie" data-id="monitores">Monitors</li>
+          <li class="categorie" data-id="tabletas">Tablets</li>
+          <li class="categorie" data-id="relojes">Watches</li>
+        </ul>
         <ion-list id="list-items"></ion-list>
       </ion-content>
     </template>
 
     <template id="page-item-detail.html">
-      <ion-header>
+      <!-- <ion-header>
         <ion-toolbar>
           <ion-title>Item Detail</ion-title>
         </ion-toolbar>
-        <ion-buttons slot="start">
+        <ion-buttons>
           <ion-back-button></ion-back-button>
         </ion-buttons>
+      </ion-header> -->
+      <ion-header style="box-shadow: none">
+        <ion-toolbar class="navbar-container" style="padding: 0 2rem">
+          <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+          </ion-buttons>
+          <ion-icon class="icon-nav" name="heart" slot="end"></ion-icon>
+          <ion-icon class="icon-nav" name="share" slot="end"></ion-icon>
+          <ion-icon class="icon-nav" name="cart-outline" slot="end"></ion-icon>
+        </ion-toolbar>
       </ion-header>
       <ion-content>
         <div id="item-detail"></div>
