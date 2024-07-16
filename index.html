@@ -5,21 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mercado libre API</title>
 
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="ionic.bundle.css" />
     <script
-      type="module"
-      src="https://cdn.jsdelivr.net/npm/@ionic/core@8.1.0/dist/ionic/ionic.esm.js"
+    type="module"
+    src="https://cdn.jsdelivr.net/npm/@ionic/core@8.1.0/dist/ionic/ionic.esm.js"
     ></script>
     <script
-      nomodule
+    nomodule
       src="https://cdn.jsdelivr.net/npm/@ionic/core@8.1.0/dist/ionic/ionic.js"
-    ></script>
-
-    <link
+      ></script>
+      
+      <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@ionic/core@8.1.0/css/ionic.bundle.css"
-    />
-  </head>
+      />
+    </head>
+    <link rel="stylesheet" href="style.css" />
   <body>
     <ion-app>
       <ion-nav root="page-list-items"></ion-nav>
@@ -58,14 +59,6 @@
     </template>
 
     <template id="page-item-detail.html">
-      <!-- <ion-header>
-        <ion-toolbar>
-          <ion-title>Item Detail</ion-title>
-        </ion-toolbar>
-        <ion-buttons>
-          <ion-back-button></ion-back-button>
-        </ion-buttons>
-      </ion-header> -->
       <ion-header style="box-shadow: none">
         <ion-toolbar class="navbar-container" style="padding: 0 2rem">
           <ion-buttons slot="start">
@@ -78,6 +71,7 @@
       </ion-header>
       <ion-content>
         <div id="item-detail"></div>
+        <ion-card-content id="item-detail-description-container"></ion-card-content>
       </ion-content>
     </template>
     <script src="js/pages.js"></script>

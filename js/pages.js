@@ -1,3 +1,4 @@
+let productCart = "productCart";
 customElements.define(
   "page-list-items",
   class extends HTMLElement {
@@ -82,6 +83,7 @@ customElements.define(
       ).innerHTML;
 
       this.chargeItemDetail();
+      this.chargeItemDetailDescription();
     }
 
     chargeItemDetail() {
@@ -95,21 +97,89 @@ customElements.define(
           console.log(error);
         });
     }
-
+    chargeItemDetailDescription() {
+      fetch(`${API_URL}items/${this.itemId}/description`)
+        .then((response) => response.json())
+        .then((data) => {
+          console.log(data, "algo");
+          this.itemDetailDescription(data);
+        })
+        .catch((error) => {
+          console.log(error, "algo");
+        });
+    }
+    getLocalStorage(key) {
+      const data = localStorage.getItem(key);
+      return data ? JSON.parse(data) : null;
+    }
+    setLocalStorage(key, value) {
+      localStorage.setItem(key, JSON.stringify(value));
+    }
     itemDetail(item) {
+      let productCart = "productCart";
+      console.log(item, "item");
+      let productCartSaveArray = this.getLocalStorage(productCart) || [];
+      productCartSaveArray.push(item);
+      this.setLocalStorage(productCart, productCartSaveArray);
+      console.log(productCartSaveArray);
+      const brandAttribute = item.attributes.find(
+        (attr) => attr.id === "BRAND"
+      );
+      const brandName = brandAttribute ? brandAttribute.value_name : "No brand";
+      console.log(brandName);
       let itemHtml = "";
-      const hasOriginalPrice = item.original_price;
       itemHtml += /* html */ `
-        <ion-card>
+        <ion-card id="${item.id}">
           <img src="${item.pictures[0].url}" alt="" />
-          <ion-card-header>
-            <ion-card-title>${item.title}</ion-card-title>
-            ${item.original_price ? `<ion-card-subtitle>${item.original_price}</ion-card-subtitle>` : ""}
-            <ion-card-subtitle>${item.price}</ion-card-subtitle>
+          <ion-card-header class="header-card-detail">
+            ${
+              item.original_price
+                ? `<ion-item class="titleDetail-container">
+            <ion-label class="titleDetail" style="font-family: Gizmo-Bold; font-size: 18px;">${item.title}</ion-label>
+            <ion-badge slot="end" style="padding: 1rem;">On Sale</ion-badge>
+          </ion-item>`
+                : `<ion-card-title class="titleDetail">${item.title}</ion-card-title>`
+            }
+            <ion-item id="subtitle-card-detail">
+              <ion-label id="brand-container">
+                <div class="${brandName} brand-icon"></div>
+                <h4>${brandName}</h4>
+              </ion-label>
+              ${
+                item.shipping.free_shipping
+                  ? `<ion-badge slot="end" style="padding: 1rem; background-color: #04a339; color: white; font-size: 16px;">
+                  Free Shipping 
+                </ion-badge>`
+                  : ""
+              }
+              
+            </ion-item>
           </ion-card-header>
-        </ion-card>
+          </ion-card>
+          <div class="price-container" id="priceContainer">
+              ${
+                item.original_price
+                  ? `<p class="original-price">${item.original_price}</p>`
+                  : ""
+              }
+              <h2 class="price" id="price">${item.currency_id} ${
+        item.price
+      }</h2>
+              <button class="call-to-action" id="addToCart">ADD TO CART</button>
+          </div>
       `;
       this.querySelector("#item-detail").innerHTML = itemHtml;
+    }
+    itemDetailDescription(description) {
+      let truncatedText = description.plain_text.slice(0, 300);
+      let itemHtml = "";
+      itemHtml += /* html */ `
+        <h3 class='title-description' id="title-description">Description</h3>
+        <p id="item-detail-description">${truncatedText}</p>
+        <p id="">See more</p>
+      `;
+      this.querySelector("#item-detail-description-container").innerHTML =
+        itemHtml;
     }
   }
 );
