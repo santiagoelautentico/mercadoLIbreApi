@@ -10,3 +10,6 @@ function navigatePageDetails(itemId) {
     itemId: itemId,
   });
 }
+function navigateCart() {
+  $.ionNav.push("page-cart");
+}

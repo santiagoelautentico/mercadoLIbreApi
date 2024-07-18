@@ -53,7 +53,7 @@ item-card {
   padding: 0 5rem;
 }
 .toolbar-container {
-  padding: 0 2rem;
+  padding: 0 1rem;
 }
 ion-icon {
   font-size: 24px;
@@ -198,4 +198,80 @@ ion-card-subtitle {
 }
 .item-native {
   padding-left: 0 !important;
+}
+
+.cart-item {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem 1rem;
+  align-items: center;
+  position: relative;
+}
+.cart-item-img {
+  width: 25%;
+  height: 60%;
+}
+.cart-item-title {
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.684);
+}
+.trash-text {
+  padding: 0;
+}
+.trash-icon {
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+  font-size: 1.2rem;
+}
+.cart-item-price {
+  font-family: "Gizmo-Bold";
+  font-size: 21px;
+}
+.btn-purchase {
+  padding: 1rem;
+  border-radius: 5px;
+  font-family: "Gizmo-Bold";
+  font-size: 18px;
+  background-image: linear-gradient(to right, #122bbb, #122593);
+  color: white;
+  width: 50%;
+}
+.header-card {
+  margin-top: 1rem;
+  border-bottom: 4px solid black;
+  width: 90%;
+  padding: 1.5rem 0;
+  margin: 0 auto;
+}
+.header-card > h2 {
+  margin: 0;
+  font-family: "Gizmo-Bold";
+  font-size: 1.5em;
+  padding-bottom: 0.2rem;
+}
+.btn-shop-container {
+  display: flex;
+  margin-bottom: 2rem;
+  margin-top: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+}
+
+.btn-shop-container > h3 {
+  font-family: "Gizmo-Bold";
+  font-size: 21px;
+  margin: 0;
+}
+.menssage-error {
+  position: fixed;
+  bottom: 5rem;
+  left: 50%;
+  width: 90%;
+  transform: translate(-50%, -50%);
+  font-size: 12px;
+  background-color: red;
+  color: white;
+  z-index: 100;
 }

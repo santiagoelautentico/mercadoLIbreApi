@@ -49,7 +49,6 @@ customElements.define(
           console.log(error);
         });
     }
-    c;
     listShopCard(list) {
       let itemHtml = "";
 
@@ -116,12 +115,6 @@ customElements.define(
       localStorage.setItem(key, JSON.stringify(value));
     }
     itemDetail(item) {
-      let productCart = "productCart";
-      console.log(item, "item");
-      let productCartSaveArray = this.getLocalStorage(productCart) || [];
-      productCartSaveArray.push(item);
-      this.setLocalStorage(productCart, productCartSaveArray);
-      console.log(productCartSaveArray);
       const brandAttribute = item.attributes.find(
         (attr) => attr.id === "BRAND"
       );
@@ -169,6 +162,33 @@ customElements.define(
           </div>
       `;
       this.querySelector("#item-detail").innerHTML = itemHtml;
+      const addToCart = this.querySelector("#addToCart");
+      addToCart.addEventListener("click", () => {
+        this.localStorageProduct(item);
+      });
+    }
+    localStorageProduct(item) {
+      let productCart = "productCart";
+      let productCartSaveArray = this.getLocalStorage(productCart) || [];
+      const productExists = productCartSaveArray.some(
+        (cartItem) => cartItem.id === item.id
+      );
+      if (!productExists) {
+        productCartSaveArray.push(item);
+        this.setLocalStorage(productCart, productCartSaveArray);
+        navigateCart();
+      } else {
+        console.log("El producto ya existe en el carrito");
+        // this.renderProductRepeated();
+        this.renderProductRepeated();
+      }
+    }
+    renderProductRepeated() {
+      let itemHtml = "";
+      itemHtml += /* html */ `
+        <div><h3>Este producto ya esta en el carrito</h3></div>
+      `;
+      this.querySelector("#ion-padding").innerHTML = itemHtml;
     }
     itemDetailDescription(description) {
       let truncatedText = description.plain_text.slice(0, 300);
@@ -180,6 +200,69 @@ customElements.define(
       `;
       this.querySelector("#item-detail-description-container").innerHTML =
         itemHtml;
+    }
+  }
+);
+customElements.define(
+  "page-cart",
+  class extends HTMLElement {
+    connectedCallback() {
+      console.log("connected page-cart");
+      this.innerHTML = document.getElementById("page-card.html").innerHTML;
+      this.renderCart();
+      this.renderHeaderCart();
+      this.renderBtnShop();
+    }
+    getLocalStorage(key) {
+      const data = localStorage.getItem(key);
+      return data ? JSON.parse(data) : null;
+    }
+    setLocalStorage(key, value) {
+      localStorage.setItem(key, JSON.stringify(value));
+    }
+
+    renderCart() {
+      let itemSave = this.getLocalStorage(productCart) || [];
+      let itemHtml = "";
+      for (let item of itemSave) {
+        itemHtml += /* html */ `
+        <div class="cart-item" data-id="${item.id}">
+          <img src="${item.thumbnail}" class="cart-item-img"></img>
+          <div class="cart-item-info">
+            <p class="cart-item-title">${item.title}</p>
+            <div class="secondary-info-container">
+              <h3 class="cart-item-price">${item.currency_id} ${item.price}</h3>
+              <ion-icon button class="trash-icon"  name="trash-outline"></ion-icon>
+            </div>
+          </div>
+        </div>
+        `;
+        this.querySelector("#cart-items").innerHTML = itemHtml;
+      }
+    }
+    renderHeaderCart() {
+      let itemSave = this.getLocalStorage(productCart) || [];
+      let itemHtml = "";
+      itemHtml += /* html */ `
+      <h2>Mi Carrito de compras</h2>
+      <span>Total: ${itemSave.length}</span>
+      `;
+      this.querySelector("#header-card").innerHTML = itemHtml;
+    }
+    renderBtnShop() {
+      let itemHtml = "";
+      let itemSave = this.getLocalStorage(productCart) || [];
+
+      // Calcular el monto total de los productos
+      let totalProducts = itemSave.reduce((total, item) => {
+        return total + item.price * (item.quantity || 1);
+      }, 0);
+
+      itemHtml += /* html */ `
+          <h3>Total: ${totalProducts.toFixed(2)}</h3>    
+          <button class="btn-purchase">Comprar</button>
+      `;
+      this.querySelector("#btn-shop-container").innerHTML = itemHtml;
     }
   }
 );
