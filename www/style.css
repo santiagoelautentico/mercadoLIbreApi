@@ -1,0 +1,400 @@
+:host {
+  box-shadow: none;
+  --inner-padding-end: 0 !important;
+  --padding-start: 0 !important;
+}
+:root {
+  --black: #222034;
+  --padding-start: 0;
+}
+ion-badge {
+  --background: #04a339;
+}
+* {
+  list-style: none;
+}
+/* @font-face {
+  font-family: "Gizmo-Regular";
+  src: url(./fonts/Geist-Regular.otf) format("opentype");
+  font-weight: normal;
+}
+@font-face {
+  font-family: "Gizmo-Bold";
+  src: url(./fonts/Geist-Bold.otf) format("opentype");
+  font-weight: normal;
+}
+@font-face {
+  font-family: "Panchang-bold";
+  src: url(./fonts/Panchang-Bold.otf) format("opentype");
+  font-weight: bold;
+}
+* {
+  font-family: "Gizmo-Regular";
+} */
+#list-items {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.md header-md header-collapse-none hydrated {
+  box-shadow: none;
+}
+/* .ion-inherit-color {
+  font-size: 16px;
+} */
+img {
+  width: 100%;
+}
+item-card {
+  width: 85%;
+  margin: 0 auto;
+  color: var(--black);
+}
+.logo-nav {
+  padding: 0 5rem;
+}
+.toolbar-container {
+  padding: 0 1rem;
+}
+ion-icon {
+  font-size: 24px;
+}
+ion-searchbar {
+  padding: 2rem 0;
+}
+.promotion-container {
+  height: 10rem;
+  display: flex;
+  background-color: #04a339;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  margin: 2rem 1rem;
+  border-radius: 15px;
+}
+.searchbar-input.sc-ion-searchbar-md {
+  box-shadow: none;
+}
+.discount-number {
+  font-size: 6rem;
+  font-family: "Panchang-bold";
+  text-align: center;
+}
+ion-card {
+  box-shadow: none;
+}
+ion-card-subtitle {
+  font-family: "gizmo-bold";
+  color: var(--black);
+  font-size: 200px;
+}
+.ion-text-title {
+  font-size: 16px;
+}
+.ion-text-subtitle {
+  font-family: "gizmo-bold";
+  color: var(--black);
+  font-size: 20px;
+}
+.categories-container {
+  display: flex;
+  overflow: auto;
+  gap: 1rem;
+  align-items: center;
+  padding: 0 1rem;
+}
+.categories-container li {
+  font-size: 16px;
+  color: var(--black);
+  cursor: pointer;
+}
+.categories-container .active {
+  color: #122593;
+  font-family: "gizmo-bold";
+  font-size: 18px;
+}
+.title-categories {
+  font-family: "gizmo-bold";
+  font-size: 21px;
+  margin-left: 1rem;
+}
+.icon-nav {
+  padding: 0 0.5rem;
+}
+ion-card-subtitle {
+  font-size: 16px;
+}
+.titleDetail-container {
+  display: flex;
+  align-items: center;
+}
+.titleDetail {
+  font-family: "Gizmo-Bold";
+  font-size: 21px;
+}
+.title-description {
+  font-size: 18px;
+}
+#title-description {
+  font-size: 21px;
+  font-family: "Gizmo-Bold";
+  color: var(--black);
+}
+#item-detail-description {
+  font-family: "Gizmo-Regular";
+  font-size: 16px;
+}
+#item-detail-description-container {
+  padding-bottom: 9rem;
+  padding-top: 0;
+}
+#priceContainer {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 30px 1rem;
+  background-color: white;
+  z-index: 1;
+}
+#price {
+  font-family: "Gizmo-Bold";
+  font-size: 21px;
+}
+#addToCart {
+  font-family: "Gizmo-Bold";
+  font-size: 18px;
+  padding: 27px;
+  background-image: linear-gradient(to right, #122bbb, #122593);
+  color: white;
+  border-radius: 5px;
+}
+
+/* ---------------------BRANDNAMES--------------------- */
+.brand-icon {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 1.5rem;
+}
+.JBL {
+  background-image: url("https://logos-world.net/wp-content/uploads/2020/12/JBL-Logo.png");
+}
+.Lenovo {
+  background-image: url("https://cdn4.iconfinder.com/data/icons/flat-brand-logo-2/512/lenovo-512.png");
+  padding: 3rem;
+}
+#brand-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  padding: 0;
+}
+.header-card-detail {
+  padding: 1rem;
+}
+.item-native {
+  padding-left: 0 !important;
+}
+
+.cart-item {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem 1rem;
+  align-items: center;
+  position: relative;
+}
+.cart-item-img {
+  width: 25%;
+  height: 60%;
+}
+.cart-item-title {
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.684);
+}
+.trash-text {
+  padding: 0;
+}
+.trash-icon {
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+  font-size: 1.2rem;
+}
+.cart-item-price {
+  font-family: "Gizmo-Bold";
+  font-size: 21px;
+}
+.btn-purchase,
+#btn-login {
+  padding: 1rem;
+  border-radius: 5px;
+  font-family: "Gizmo-Bold";
+  font-size: 18px;
+  background-image: linear-gradient(to right, #122bbb, #122593);
+  color: white;
+  width: 50%;
+}
+#btn-signin {
+  padding: 1rem;
+  border-radius: 5px;
+  font-family: "Gizmo-Bold";
+  font-size: 18px;
+  background-image: linear-gradient(to right, #122bbb, #122593);
+  color: white;
+  width: 70%;
+}
+#btn-reintentar {
+  padding: 1rem;
+  border-radius: 5px;
+  font-family: "Gizmo-Bold";
+  font-size: 16px;
+  background-image: linear-gradient(to right, #122bbb, #122593);
+  color: white;
+  width: 40%;
+  margin: 0 auto;
+}
+#btn-cancelar {
+  padding: 1rem;
+  border-radius: 5px;
+  font-family: "Gizmo-Regular";
+  font-size: 16px;
+  color: red;
+  border: red 1px solid;
+  width: 40%;
+  margin: 0 auto;
+}
+.btn-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3rem;
+  flex-direction: column;
+  gap: 1rem;
+}
+#btn-login {
+  margin: 0 auto;
+}
+.header-card {
+  margin-top: 1rem;
+  border-bottom: 4px solid black;
+  width: 90%;
+  padding: 1.5rem 0;
+  margin: 0 auto;
+}
+.header-card > h2 {
+  margin: 0;
+  font-family: "Gizmo-Bold";
+  font-size: 1.5em;
+  padding-bottom: 0.2rem;
+}
+.btn-shop-container {
+  display: flex;
+  margin-bottom: 2rem;
+  margin-top: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+}
+
+.btn-shop-container > h3 {
+  font-family: "Gizmo-Bold";
+  font-size: 18px;
+  margin: 0;
+}
+.menssage-error {
+  position: fixed;
+  bottom: 6rem;
+  left: 50%;
+  width: 90%;
+  transform: translate(-50%, -50%);
+  background-color: rgb(73, 73, 73);
+  color: white;
+  z-index: 100;
+  border-radius: 5px;
+}
+.title-error {
+  font-size: 18px;
+  margin-left: 1rem;
+}
+.hidden {
+  display: none;
+}
+.container-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.isoLogo {
+  margin-top: 1rem;
+  width: 5rem;
+}
+.title-login > h2 {
+  font-family: "Gizmo-Bold";
+  font-size: 1.5em;
+  padding-bottom: 0.2rem;
+  text-align: center;
+}
+.form-login-container {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: center;
+}
+#inputName,
+#inputEmail,
+#inputPassword,
+#inputUsername {
+  width: 75%;
+  margin: 0 auto;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px;
+}
+#link-signin > span,
+#link-signin > span {
+  color: #122bbb;
+  font-family: "Gizmo-Bold";
+}
+.active-message {
+  background-color: red;
+  padding: 1rem;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 2rem;
+  border-radius: 5px;
+  color: white;
+}
+.inactive-message {
+  opacity: 0;
+}
+.original-price {
+  text-decoration: line-through;
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.684);
+  position: absolute;
+  top: 1rem;
+}
+#checkout-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1rem;
+  height: 90%;
+  padding: 0 2rem;
+}
+#checkout-container > h1 {
+  font-family: "Gizmo-Bold";
+  font-size: 21px;
+  text-align: center;
+}
+.botones-checkout {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#spinner-icon {
+  text-align: center;
+}

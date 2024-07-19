@@ -1,0 +1,6 @@
+{
+  "appId": "com.gizmo.ecommerce",
+  "appName": "gizmo ecommerce",
+  "webDir": "www",
+  "bundledWebRuntime": true
+}
