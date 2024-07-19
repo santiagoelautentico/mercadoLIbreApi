@@ -4,8 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mercado libre API</title>
-
-    <link rel="stylesheet" href="ionic.bundle.css" />
     <script
       type="module"
       src="https://cdn.jsdelivr.net/npm/@ionic/core@8.1.0/dist/ionic/ionic.esm.js"
@@ -23,6 +21,52 @@
   <link rel="stylesheet" href="style.css" />
   <body>
     <ion-app>
+      <ion-menu content-id="main-content">
+        <ion-header>
+          <ion-toolbar>
+            <ion-title id="user-name">Menu Content</ion-title>
+          </ion-toolbar>
+        </ion-header>
+        <ion-content class="ion-padding">
+          <ion-accordion-group>
+            <ion-accordion value="first">
+              <ion-item slot="header" color="light">
+                <ion-label>Catergorias</ion-label>
+              </ion-item>
+              <ion-list
+                class="content-container"
+                slot="content"
+                id="first-accordion"
+              >
+              </ion-list>
+            </ion-accordion>
+            <ion-accordion value="second">
+              <ion-item slot="header" color="light">
+                <ion-label>Descuentos</ion-label>
+              </ion-item>
+              <ion-list
+                class="content-container"
+                slot="content"
+                id="second-accordion"
+              >
+              </ion-list>
+            </ion-accordion>
+          </ion-accordion-group>
+        </ion-content>
+      </ion-menu>
+      <div class="ion-page" id="main-content">
+        <ion-header>
+          <ion-toolbar>
+            <ion-buttons slot="start">
+              <ion-menu-button></ion-menu-button>
+            </ion-buttons>
+            <ion-title>Menu</ion-title>
+          </ion-toolbar>
+        </ion-header>
+        <ion-content class="ion-padding">
+          Tap the button in the toolbar to open the menu.
+        </ion-content>
+      </div>
       <ion-nav root="page-list-items"></ion-nav>
     </ion-app>
 
@@ -31,7 +75,12 @@
         <ion-toolbar class="navbar-container" style="padding: 0 2rem">
           <ion-icon name="menu-outline" slot="start"></ion-icon>
           <img src="./img/gizmo.svg" alt="" class="logo-nav" />
-          <ion-icon name="cart-outline" slot="end"></ion-icon>
+          <ion-icon
+            name="cart-outline"
+            class="icon-cart"
+            id="icon-cart"
+            slot="end"
+          ></ion-icon>
         </ion-toolbar>
       </ion-header>
       <ion-content>
@@ -57,7 +106,6 @@
         <ion-list id="list-items"></ion-list>
       </ion-content>
     </template>
-
     <template id="page-item-detail.html">
       <ion-header style="box-shadow: none">
         <ion-toolbar class="navbar-container" style="padding: 0 2rem">
@@ -89,6 +137,116 @@
       <div class="header-card" id="header-card"></div>
       <ion-content id="cart-items"></ion-content>
       <div class="btn-shop-container" id="btn-shop-container"></div>
+    </template>
+    <template id="page-checkout.html">
+      <ion-header style="box-shadow: none">
+        <ion-toolbar class="navbar-container" style="padding: 0 2rem">
+          <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+          </ion-buttons>
+          <img src="./img/gizmo.svg" alt="" class="logo-nav" />
+        </ion-toolbar>
+      </ion-header>
+      <ion-content id="checkout">
+        <article class="checkout-container" id="checkout-container">
+          <div id="spinner-container" style="text-align: center">
+            <ion-spinner
+              name="lines-small"
+              slot=""
+              id="spinner-icon"
+            ></ion-spinner>
+          </div>
+        </article>
+      </ion-content>
+    </template>
+    <template id="page-login.html">
+      <ion-header style="box-shadow: none">
+        <ion-toolbar class="navbar-container" style="padding: 0 2rem">
+          <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+          </ion-buttons>
+          <img src="./img/gizmo.svg" alt="" class="logo-nav" />
+        </ion-toolbar>
+      </ion-header>
+      <article class="title-login">
+        <div class="container-logo">
+          <img src="./img/isoGizmo.svg" class="isoLogo" alt="" />
+        </div>
+        <h2>Crear Cuenta</h2>
+      </article>
+      <ion-content id="login-container">
+        <form action="" class="form-login-container">
+          <ion-input
+            id="inputName"
+            label="Nombre"
+            label-placement="floating"
+          ></ion-input>
+          <ion-input
+            id="inputUsername"
+            label="Nombre de usuario"
+            label-placement="floating"
+          ></ion-input>
+          <ion-input
+            id="inputEmail"
+            type="email"
+            label="Correo"
+            label-placement="floating"
+            error-text="Invalid email"
+          ></ion-input>
+          <ion-input
+            id="inputPassword"
+            label="Contraseña"
+            label-placement="floating"
+          ></ion-input>
+        </form>
+        <div class="btn-container">
+          <button class="btn-login" id="btn-login" expand="block">
+            Crear cuenta
+          </button>
+          <h5 id="link-signin">Ya tienes cuenta? <span>Inicia Sesion</span></h5>
+        </div>
+        <div class="menssage-error" id="ion-padding"></div>
+      </ion-content>
+    </template>
+
+    <template id="page-signin.html">
+      <ion-header style="box-shadow: none">
+        <ion-toolbar class="navbar-container" style="padding: 0 2rem">
+          <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+          </ion-buttons>
+          <img src="./img/gizmo.svg" alt="" class="logo-nav" />
+        </ion-toolbar>
+      </ion-header>
+      <article class="title-login">
+        <div class="container-logo">
+          <img src="./img/isoGizmo.svg" class="isoLogo" alt="" />
+        </div>
+        <h2>Iniciar Sesion</h2>
+      </article>
+      <ion-content id="login-container">
+        <form action="" class="form-login-container">
+          <ion-input
+            id="inputEmail"
+            type="email"
+            label="Correo"
+            label-placement="floating"
+            error-text="Invalid email"
+          ></ion-input>
+          <ion-input
+            id="inputPassword"
+            label="Contraseña"
+            label-placement="floating"
+          ></ion-input>
+        </form>
+        <div class="btn-container">
+          <div class="btn-container">
+            <button class="btn-signin" id="btn-signin">Iniciar Sesion</button>
+            <h5 id="link-signin">No tienes cuenta <span>Crear Cuenta</span></h5>
+          </div>
+        </div>
+        <div class="menssage-error" id="ion-padding"></div>
+      </ion-content>
     </template>
     <script src="js/pages.js"></script>
     <script src="js/components.js"></script>

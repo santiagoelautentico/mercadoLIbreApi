@@ -228,7 +228,8 @@ ion-card-subtitle {
   font-family: "Gizmo-Bold";
   font-size: 21px;
 }
-.btn-purchase {
+.btn-purchase,
+#btn-login {
   padding: 1rem;
   border-radius: 5px;
   font-family: "Gizmo-Bold";
@@ -236,6 +237,46 @@ ion-card-subtitle {
   background-image: linear-gradient(to right, #122bbb, #122593);
   color: white;
   width: 50%;
+}
+#btn-signin {
+  padding: 1rem;
+  border-radius: 5px;
+  font-family: "Gizmo-Bold";
+  font-size: 18px;
+  background-image: linear-gradient(to right, #122bbb, #122593);
+  color: white;
+  width: 70%;
+}
+#btn-reintentar {
+  padding: 1rem;
+  border-radius: 5px;
+  font-family: "Gizmo-Bold";
+  font-size: 16px;
+  background-image: linear-gradient(to right, #122bbb, #122593);
+  color: white;
+  width: 40%;
+  margin: 0 auto;
+}
+#btn-cancelar {
+  padding: 1rem;
+  border-radius: 5px;
+  font-family: "Gizmo-Regular";
+  font-size: 16px;
+  color: red;
+  border: red 1px solid;
+  width: 40%;
+  margin: 0 auto;
+}
+.btn-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3rem;
+  flex-direction: column;
+  gap: 1rem;
+}
+#btn-login {
+  margin: 0 auto;
 }
 .header-card {
   margin-top: 1rem;
@@ -261,17 +302,99 @@ ion-card-subtitle {
 
 .btn-shop-container > h3 {
   font-family: "Gizmo-Bold";
-  font-size: 21px;
+  font-size: 18px;
   margin: 0;
 }
 .menssage-error {
   position: fixed;
-  bottom: 5rem;
+  bottom: 6rem;
   left: 50%;
   width: 90%;
   transform: translate(-50%, -50%);
-  font-size: 12px;
-  background-color: red;
+  background-color: rgb(73, 73, 73);
   color: white;
   z-index: 100;
+  border-radius: 5px;
+}
+.title-error {
+  font-size: 18px;
+  margin-left: 1rem;
+}
+.hidden {
+  display: none;
+}
+.container-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.isoLogo {
+  margin-top: 1rem;
+  width: 5rem;
+}
+.title-login > h2 {
+  font-family: "Gizmo-Bold";
+  font-size: 1.5em;
+  padding-bottom: 0.2rem;
+  text-align: center;
+}
+.form-login-container {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: center;
+}
+#inputName,
+#inputEmail,
+#inputPassword,
+#inputUsername {
+  width: 75%;
+  margin: 0 auto;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px;
+}
+#link-signin > span,
+#link-signin > span {
+  color: #122bbb;
+  font-family: "Gizmo-Bold";
+}
+.active-message {
+  background-color: red;
+  padding: 1rem;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 2rem;
+  border-radius: 5px;
+  color: white;
+}
+.inactive-message {
+  opacity: 0;
+}
+.original-price {
+  text-decoration: line-through;
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.684);
+  position: absolute;
+  top: 1rem;
+}
+#checkout-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1rem;
+  height: 90%;
+  padding: 0 2rem;
+}
+#checkout-container > h1 {
+  font-family: "Gizmo-Bold";
+  font-size: 21px;
+  text-align: center;
+}
+.botones-checkout {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#spinner-icon {
+  text-align: center;
 }
