@@ -58,7 +58,7 @@ customElements.define(
           });
           clickedElement.classList.add("active");
           const categorieId = clickedElement.getAttribute("data-id");
-          this.chargeListItemsCategories(categorieId);
+          this.searchListItems(categorieId);
         }
       });
     }
